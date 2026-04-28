@@ -18,5 +18,23 @@ public class Main {
 
 		System.out.println("Precio de panqueques: " + panqueques.getPrecio());
 		System.out.println("Precio de panqueques con dulce de leche: " + panquequesConDulceDeLeche.getPrecio());
+
+		// Ejemplo simple de herencia: Pizza y Hambuguesa heredan de Plato.
+		Ingrediente masa = new Ingrediente(5, "Masa", new BigDecimal("700"));
+		Ingrediente salsa = new Ingrediente(6, "Salsa", new BigDecimal("250"));
+		Ingrediente queso = new Ingrediente(7, "Queso", new BigDecimal("900"));
+		Ingrediente pina = new Ingrediente(8, "Piña", new BigDecimal("400"));
+
+		Pizza pizzaConPina = new Pizza(10, "Pizza", "Piña");
+		pizzaConPina.agregarComponente(masa);
+		pizzaConPina.agregarComponente(salsa);
+		pizzaConPina.agregarComponente(queso);
+		pizzaConPina.agregarComponente(pina);
+
+		Hambuguesa hamburguesaArgenta = new Hambuguesa(11, "Hambuguesa", "Argenta");
+
+		System.out.println(pizzaConPina);
+		System.out.println("Precio de pizza con piña: " + pizzaConPina.getPrecio());
+		System.out.println(hamburguesaArgenta);
 	}
 }
